@@ -100,7 +100,7 @@ public double prezzoIva(){
         return "Prodotto:" + "Codice: " + getCodice() +
                 ", Nome: " + getNome() +
                 ", Marca: " + getMarca() +
-                ", Prezzo: " + getPrezzo() +
+                ", Prezzo: " + prezzoIva()+
                 ", IVA: " + getIva();
     }
 }

@@ -1,25 +1,22 @@
 package org.java.lessons;
 
 public class Cuffie extends Prodotto{
-    private String wireless;
-    private String cablate;
+    private String tipologia;
 
-    public Cuffie( String nome, String marca, double prezzo, double iva, String wireless, String cablate){
+
+    public Cuffie( String nome, String marca, double prezzo, double iva, String tipologia){
         super( nome, marca, prezzo, iva);
-        this.cablate = cablate;
-        this.wireless = wireless;
+       this.tipologia = tipologia;
     }
 
-    public String getCablate() {
-        return cablate;
+    public String getTipologia() {
+        return tipologia;
     }
-
-    public String getWireless() {
-        return wireless;
+    public String toString() {
+        return "Smartphone:" + "Codice: " + getCodice() +
+                ", Nome: " + getNome() +
+                ", Marca: " + getMarca() +
+                ", Prezzo: " + prezzoIva() +
+                ", IVA: " + getIva() + ", tipologia:  " + tipologia;
     }
-
-
-
-
-
 }
