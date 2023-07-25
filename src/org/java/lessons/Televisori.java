@@ -16,7 +16,7 @@ public class Televisori extends Prodotto {
     public int getDimensioni() {
         return dimensioni;
     }
-public String IsItSmartTV(boolean IsItSmart) {
+private String IsItSmartTV(boolean IsItSmart) {
     if (IsItSmart) {
         return "Sì";
     } else {
