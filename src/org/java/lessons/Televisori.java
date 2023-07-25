@@ -9,16 +9,15 @@ public class Televisori extends Prodotto {
         this.dimensioni = dimensioni;
         this.IsItSmart = IsItSmart;
     }
-
-    public boolean isItSmart() {
+    public boolean IsItSmart() {
         return IsItSmart;
     }
 
     public int getDimensioni() {
         return dimensioni;
     }
-public String IsItSmart(boolean isItSmart) {
-    if (isItSmart) {
+public String IsItSmartTV(boolean IsItSmart) {
+    if (IsItSmart) {
         return "Sì";
     } else {
         return "no";
@@ -31,7 +30,7 @@ public String IsItSmart(boolean isItSmart) {
                 ", Nome: " + getNome() +
                 ", Marca: " + getMarca() +
                 ", Prezzo: " + prezzoIva() +
-                ", IVA: " + getIva() + ", Dimensioni: " + getDimensioni() + ", SmartTv:  " + IsItSmart;
+                ", IVA: " + getIva() + ", Dimensioni: " + getDimensioni() + ", SmartTv:  " + IsItSmartTV(IsItSmart);
     }
 
 }
