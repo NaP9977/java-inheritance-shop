@@ -2,15 +2,14 @@
 ////Smartphone, caratterizzati anche dal codice IMEI e dalla quantità di memoria
 package org.java.lessons;
 
-import java.math.BigDecimal;
 import java.util.Random;
 
 public class Smartphone extends Prodotto{
     private long codiceIMEI;
     private int memoria;
 
-   public Smartphone(int codice, String nome, String marca, BigDecimal prezzo, BigDecimal iva, long codiceIMEI, int memoria){
-       super(codice,nome,marca,prezzo,iva);
+   public Smartphone( String nome, String marca, double prezzo, double iva, long codiceIMEI, int memoria){
+       super(nome,marca,prezzo,iva);
        this.codiceIMEI = generaIMEI();
         this.memoria = memoria;
     }

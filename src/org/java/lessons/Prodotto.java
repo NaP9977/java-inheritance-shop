@@ -27,17 +27,17 @@
 
 package org.java.lessons;
 
-import java.math.BigDecimal;
+import java.util.Random;
 
 public class Prodotto {
   private  int codice;
    private String nome;
      private String marca;
-   private  BigDecimal prezzo;
-   private  BigDecimal iva;
+   private  double prezzo;
+   private  double iva;
 
-    public Prodotto(int codice, String nome, String marca, BigDecimal prezzo, BigDecimal iva) {
-        this.codice = codice;
+    public Prodotto(String nome, String marca, double prezzo, double iva) {
+        this.codice = randomCodice();
         this.nome = nome;
         this.marca = marca;
         this.prezzo = prezzo;
@@ -62,36 +62,45 @@ public class Prodotto {
         this.marca = marca;
     }
 
-    public BigDecimal getIva() {
+    public double getIva() {
         return iva;
     }
 
-    public void setIva(BigDecimal iva) {
+    public void setIva(double iva) {
         this.iva = iva;
     }
 
 
-    public BigDecimal getPrezzo() {
+    public double getPrezzo() {
         return prezzo;
     }
 
-    public void setPrezzo(BigDecimal prezzo) {
+    public void setPrezzo(double prezzo) {
         this.prezzo = prezzo;
     }
 
     public int getCodice() {
         return codice;
     }
- public BigDecimal prezzoBase(){
+ public double prezzoBase(){
         return prezzo;
  }
-public BigDecimal prezzoIva(){
-        return prezzo.subtract(IvaIneuro());
-    }
-private BigDecimal IvaIneuro(){
-        return prezzo.multiply(iva);
+public double prezzoIva(){
+        return prezzo + (iva * prezzo);
     }
 
 
+    private int randomCodice(){
+        Random randomCodice = new Random();
+        return randomCodice.nextInt(100000);
+    }
 
+    @Override
+    public String toString() {
+        return "Prodotto:" + "Codice: " + getCodice() +
+                ", Nome: " + getNome() +
+                ", Marca: " + getMarca() +
+                ", Prezzo: " + getPrezzo() +
+                ", IVA: " + getIva();
+    }
 }
